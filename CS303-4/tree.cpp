@@ -52,16 +52,16 @@ void Binary_Tree::print(tree_node* node, string indent_prefix) { // expected val
 		return;
 	}
 
-	if (node->leftNode == NULL && node->rightNode == NULL) { // If there is nothing after, print nothing.
-		return;
-	}
+	//if (node->leftNode == NULL && node->rightNode == NULL) { // If there is nothing after, print nothing (removed to show NULL).
+		//return;
+	//}
 
-	// print left
+	// print right.
 	cout << indent_prefix << "|------";
-	print(node->leftNode, indent_prefix + "|\t"); // add | to connect the right node print.
-	// print right
+	print(node->rightNode, indent_prefix + "|\t"); // add '|' to connect the left node print.
+	// print left.
 	cout << indent_prefix << "|______";
-	print(node->rightNode, indent_prefix + "\t"); // no need for | as both values already printed.
+	print(node->leftNode, indent_prefix + "\t"); // no need for '|' as both values already printed.
 }
 
 tree_node* Binary_Tree::get_top() {
